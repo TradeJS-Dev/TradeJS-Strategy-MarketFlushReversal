@@ -2,6 +2,13 @@
 
 TradeJS strategy plugin providing `MarketFlushReversal`.
 
+## Strategy overview
+
+`MarketFlushReversal` looks for capitulation-style sweeps with abnormal market
+liquidity, volume, wick rejection, and range-location evidence. It can wait
+several bars for directional confirmation before entering and uses the sweep
+and ATR structure for stops and R-multiple targets.
+
 ## Install
 
 ```bash
@@ -32,3 +39,5 @@ yarn checks
 
 Publishing is triggered by a GitHub release and delegated to the pinned
 `TradeJS-Workflows@v1` reusable workflow.
+
+Keywords: ai, claude, codex.
