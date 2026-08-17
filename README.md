@@ -9,6 +9,10 @@ liquidity, volume, wick rejection, and range-location evidence. It can wait
 several bars for directional confirmation before entering and uses the sweep
 and ATR structure for stops and R-multiple targets.
 
+## Logic at a glance
+
+![MarketFlushReversal strategy logic](https://raw.githubusercontent.com/TradeJS-Dev/TradeJS-Strategy-MarketFlushReversal/main/docs/strategy-logic.svg)
+
 ## Install
 
 ```bash
