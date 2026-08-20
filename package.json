@@ -1,6 +1,6 @@
 {
   "name": "@tradejs/strategy-market-flush-reversal",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Market-flush reversal strategy using liquidity spikes, sweep and rejection structure, delayed confirmation, and ATR risk controls for TradeJS.",
   "type": "module",
   "packageManager": "yarn@4.13.0",
