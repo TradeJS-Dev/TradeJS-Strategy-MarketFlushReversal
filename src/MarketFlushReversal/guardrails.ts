@@ -2,9 +2,11 @@ import type { BaseStrategyContextSnapshot, Direction } from "@tradejs/types";
 import type { MarketFlushReversalSignalContext } from "./core";
 import {
   getMarketFlushReversalAiLongPocketFeatures,
+  getMarketFlushReversalAiShortPocketFeatures,
   getMarketFlushReversalLongReboundPocketFeatures,
   isMarketFlushReversalCalibratedLongReboundPocket,
   isMarketFlushReversalValidatedAiLongPocket,
+  isMarketFlushReversalValidatedAiShortPocket,
 } from "./pockets";
 
 export type MarketFlushReversalGateFeatures = {
@@ -30,6 +32,8 @@ export type MarketFlushReversalGateFeatures = {
   cmcIndexStale: boolean | null;
   rsiState: string | null;
   validatedAiLongPocket: boolean;
+  top10AdvanceDeclineRatio: number | null;
+  validatedAiShortPocket: boolean;
 };
 
 export type MarketFlushReversalGuardrailContext =
@@ -213,6 +217,15 @@ export const buildMarketFlushReversalGuardrailContext = ({
   });
   const { stopDistanceAtr, cmcIndexRegime, cmcIndexStale, rsiState } =
     aiLongPocketFeatures;
+  const aiShortPocketFeatures = getMarketFlushReversalAiShortPocketFeatures({
+    baseContext,
+    sweepWickPct,
+  });
+  const validatedAiShortPocket = isMarketFlushReversalValidatedAiShortPocket({
+    ...aiShortPocketFeatures,
+    direction,
+  });
+  const { top10AdvanceDeclineRatio } = aiShortPocketFeatures;
   const approvalBlockReasons: string[] = [];
   const riskAnnotations: string[] = [];
 
@@ -239,8 +252,8 @@ export const buildMarketFlushReversalGuardrailContext = ({
   ) {
     riskAnnotations.push("broad_market_flush_direction_mismatch");
   }
-  if (direction === "SHORT") {
-    approvalBlockReasons.push("short_flush_rebound_pocket_not_validated");
+  if (direction === "SHORT" && !validatedAiShortPocket) {
+    approvalBlockReasons.push("validated_short_ai_pocket_missing");
   }
   if (direction === "LONG" && !validatedAiLongPocket) {
     approvalBlockReasons.push("validated_long_ai_pocket_missing");
@@ -282,6 +295,8 @@ export const buildMarketFlushReversalGuardrailContext = ({
     cmcIndexStale,
     rsiState,
     validatedAiLongPocket,
+    top10AdvanceDeclineRatio,
+    validatedAiShortPocket,
   };
 
   return {

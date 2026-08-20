@@ -14,10 +14,17 @@ export type MarketFlushReversalAiLongPocketFeatures = {
   rsiState: string | null;
 };
 
+export type MarketFlushReversalAiShortPocketFeatures = {
+  top10AdvanceDeclineRatio: number | null;
+  sweepWickPct: number | null;
+};
+
 export const MFR_CALIBRATED_LONG_TARGET_VS_BTC_RATIO_RETURN_24H_MAX = -3.3;
 export const MFR_CALIBRATED_LONG_ETH_VS_BTC_VOLUME_RATIO_MIN = 0.54;
 export const MFR_CALIBRATED_LONG_H1_RANGE_POSITION_MAX = 0.08;
 export const MFR_AI_LONG_STOP_DISTANCE_ATR_MIN = 24;
+export const MFR_AI_SHORT_TOP10_ADVANCE_DECLINE_RATIO_MIN = 4;
+export const MFR_AI_SHORT_SWEEP_WICK_PCT_MIN = 0.2;
 
 export const getMarketFlushReversalLongReboundPocketFeatures = (
   baseContext: BaseStrategyContextSnapshot | null | undefined,
@@ -79,3 +86,29 @@ export const isMarketFlushReversalValidatedAiLongPocket = ({
   cmcIndexRegime === "risk_off" &&
   cmcIndexStale === false &&
   rsiState === "oversold";
+
+export const getMarketFlushReversalAiShortPocketFeatures = ({
+  baseContext,
+  sweepWickPct,
+}: {
+  baseContext: BaseStrategyContextSnapshot | null | undefined;
+  sweepWickPct: number | null;
+}): MarketFlushReversalAiShortPocketFeatures => ({
+  top10AdvanceDeclineRatio: toFiniteNumberOrNull(
+    baseContext?.relative?.marketBreadths?.top10?.advanceDeclineRatio,
+  ),
+  sweepWickPct,
+});
+
+export const isMarketFlushReversalValidatedAiShortPocket = ({
+  direction,
+  top10AdvanceDeclineRatio,
+  sweepWickPct,
+}: {
+  direction: Direction | null;
+} & MarketFlushReversalAiShortPocketFeatures) =>
+  direction === "SHORT" &&
+  top10AdvanceDeclineRatio != null &&
+  top10AdvanceDeclineRatio > MFR_AI_SHORT_TOP10_ADVANCE_DECLINE_RATIO_MIN &&
+  sweepWickPct != null &&
+  sweepWickPct >= MFR_AI_SHORT_SWEEP_WICK_PCT_MIN;

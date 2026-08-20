@@ -120,6 +120,8 @@ Additional Market Flush Reversal context:
 - cmcIndexStale=${String(context.marketFlushReversalGateFeatures.cmcIndexStale ?? "n/a")}
 - rsiState=${context.marketFlushReversalGateFeatures.rsiState ?? "n/a"}
 - validatedAiLongPocket=${String(context.marketFlushReversalGateFeatures.validatedAiLongPocket)}
+- top10AdvanceDeclineRatio=${String(context.marketFlushReversalGateFeatures.top10AdvanceDeclineRatio ?? "n/a")}
+- validatedAiShortPocket=${String(context.marketFlushReversalGateFeatures.validatedAiShortPocket)}
 - approvalAllowedNow=${String(context.approvalAllowedNow)}
 - deterministicQuality=${String(context.deterministicQuality)}
 - approvalBlockReasons=${context.approvalBlockReasons.join(",") || "none"}
