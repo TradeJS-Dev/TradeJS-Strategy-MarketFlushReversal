@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title description">
+<title id="title">MarketFlushReversal signal on an illustrative ticker chart</title>
+<desc id="description">Capitulation sweep, rejection, and delayed confirmation. The chart is schematic and does not represent live market data.</desc>
+<defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#08111f"/><stop offset="100%" stop-color="#111b32"/></linearGradient>
+    <linearGradient id="plot" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#101b30"/><stop offset="100%" stop-color="#0b1426"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#020617" flood-opacity="0.42"/></filter>
+    <style>
+      .title{fill:#f8fafc;font:700 28px Inter,ui-sans-serif,system-ui,sans-serif}.subtitle{fill:#94a3b8;font:400 15px Inter,ui-sans-serif,system-ui,sans-serif}.brand{fill:#475569;font:600 13px Inter,ui-sans-serif,system-ui,sans-serif;letter-spacing:.08em}.panel{fill:url(#plot);stroke:#26364f;stroke-width:1.5;filter:url(#shadow)}.grid{stroke:#20304a;stroke-width:1}.axis{fill:#64748b;font:600 10px Inter,ui-sans-serif,system-ui,sans-serif;letter-spacing:.08em}.overlay-label{fill:#cbd5e1;font:600 11px Inter,ui-sans-serif,system-ui,sans-serif}.annotation{fill:#e2e8f0;font:600 11px Inter,ui-sans-serif,system-ui,sans-serif}.condition-title{fill:#64748b;font:700 11px Inter,ui-sans-serif,system-ui,sans-serif;letter-spacing:.09em}.condition-number{fill:#08111f;font:800 12px Inter,ui-sans-serif,system-ui,sans-serif}.condition-copy{fill:#e2e8f0;font:500 13px Inter,ui-sans-serif,system-ui,sans-serif}.footer{fill:#94a3b8;font:500 12px Inter,ui-sans-serif,system-ui,sans-serif}.signal{fill:#08111f;font:800 11px Inter,ui-sans-serif,system-ui,sans-serif;letter-spacing:.03em}.risk{font:700 10px Inter,ui-sans-serif,system-ui,sans-serif;letter-spacing:.06em}
+    </style>
+  </defs>
+<rect width="1200" height="560" rx="24" fill="url(#background)"/>
+<text x="32" y="45" class="title">MarketFlushReversal</text>
+<text x="32" y="72" class="subtitle">Capitulation sweep, rejection, and delayed confirmation</text>
+<text x="1168" y="45" text-anchor="end" class="brand">TRADEJS</text>
+<rect x="32" y="104" width="790" height="416" rx="18" class="panel"/>
+<rect x="842" y="104" width="326" height="416" rx="18" class="panel"/>
+<text x="58" y="134" class="axis">ILLUSTRATIVE TICKER</text>
+<text x="796" y="134" text-anchor="end" class="axis">SCHEMATIC • NOT LIVE DATA</text>
+<line x1="58" y1="162.0" x2="796" y2="162.0" class="grid"/>
+<line x1="58" y1="212.8" x2="796" y2="212.8" class="grid"/>
+<line x1="58" y1="263.5" x2="796" y2="263.5" class="grid"/>
+<line x1="58" y1="314.3" x2="796" y2="314.3" class="grid"/>
+<line x1="58" y1="365.0" x2="796" y2="365.0" class="grid"/>
+<line x1="58.0" y1="162" x2="58.0" y2="365" class="grid"/>
+<line x1="205.6" y1="162" x2="205.6" y2="365" class="grid"/>
+<line x1="353.2" y1="162" x2="353.2" y2="365" class="grid"/>
+<line x1="500.8" y1="162" x2="500.8" y2="365" class="grid"/>
+<line x1="648.4" y1="162" x2="648.4" y2="365" class="grid"/>
+<line x1="796.0" y1="162" x2="796.0" y2="365" class="grid"/>
+<line x1="58.0" y1="199.4" x2="58.0" y2="210.1" stroke="#34d399" stroke-width="1.5"/>
+<rect x="51.5" y="202.6" width="13.0" height="3.2" rx="2" fill="#34d399"/>
+<line x1="87.5" y1="195.7" x2="87.5" y2="211.9" stroke="#f87171" stroke-width="1.5"/>
+<rect x="81.0" y="200.0" width="13.0" height="6.7" rx="2" fill="#f87171"/>
+<line x1="117.0" y1="202.1" x2="117.0" y2="214.0" stroke="#f87171" stroke-width="1.5"/>
+<rect x="110.5" y="207.3" width="13.0" height="3.4" rx="2" fill="#f87171"/>
+<line x1="146.6" y1="209.9" x2="146.6" y2="219.0" stroke="#f87171" stroke-width="1.5"/>
+<rect x="140.1" y="213.2" width="13.0" height="2.5" rx="2" fill="#f87171"/>
+<line x1="176.1" y1="209.2" x2="176.1" y2="224.1" stroke="#f87171" stroke-width="1.5"/>
+<rect x="169.6" y="213.5" width="13.0" height="5.4" rx="2" fill="#f87171"/>
+<line x1="205.6" y1="211.5" x2="205.6" y2="226.1" stroke="#f87171" stroke-width="1.5"/>
+<rect x="199.1" y="216.7" width="13.0" height="6.2" rx="2" fill="#f87171"/>
+<line x1="235.1" y1="221.5" x2="235.1" y2="231.2" stroke="#f87171" stroke-width="1.5"/>
+<rect x="228.6" y="224.7" width="13.0" height="2.5" rx="2" fill="#f87171"/>
+<line x1="264.6" y1="224.3" x2="264.6" y2="236.3" stroke="#f87171" stroke-width="1.5"/>
+<rect x="258.1" y="228.6" width="13.0" height="2.5" rx="2" fill="#f87171"/>
+<line x1="294.2" y1="223.5" x2="294.2" y2="238.3" stroke="#f87171" stroke-width="1.5"/>
+<rect x="287.7" y="228.8" width="13.0" height="6.3" rx="2" fill="#f87171"/>
+<line x1="323.7" y1="230.8" x2="323.7" y2="243.4" stroke="#f87171" stroke-width="1.5"/>
+<rect x="317.2" y="234.0" width="13.0" height="5.1" rx="2" fill="#f87171"/>
+<line x1="353.2" y1="237.4" x2="353.2" y2="252.5" stroke="#f87171" stroke-width="1.5"/>
+<rect x="346.7" y="241.7" width="13.0" height="5.6" rx="2" fill="#f87171"/>
+<line x1="382.7" y1="242.4" x2="382.7" y2="262.7" stroke="#f87171" stroke-width="1.5"/>
+<rect x="376.2" y="247.7" width="13.0" height="11.8" rx="2" fill="#f87171"/>
+<line x1="412.2" y1="253.6" x2="412.2" y2="284.0" stroke="#f87171" stroke-width="1.5"/>
+<rect x="405.7" y="256.8" width="13.0" height="22.9" rx="2" fill="#f87171"/>
+<line x1="441.8" y1="275.8" x2="441.8" y2="352.8" stroke="#f87171" stroke-width="1.5"/>
+<rect x="435.3" y="280.0" width="13.0" height="20.0" rx="2" fill="#f87171"/>
+<line x1="471.3" y1="282.6" x2="471.3" y2="305.9" stroke="#34d399" stroke-width="1.5"/>
+<rect x="464.8" y="287.9" width="13.0" height="14.7" rx="2" fill="#34d399"/>
+<line x1="500.8" y1="268.4" x2="500.8" y2="291.2" stroke="#34d399" stroke-width="1.5"/>
+<rect x="494.3" y="271.6" width="13.0" height="15.3" rx="2" fill="#34d399"/>
+<line x1="530.3" y1="255.2" x2="530.3" y2="274.6" stroke="#34d399" stroke-width="1.5"/>
+<rect x="523.8" y="259.4" width="13.0" height="9.9" rx="2" fill="#34d399"/>
+<line x1="559.8" y1="242.0" x2="559.8" y2="264.2" stroke="#34d399" stroke-width="1.5"/>
+<rect x="553.3" y="247.3" width="13.0" height="13.7" rx="2" fill="#34d399"/>
+<line x1="589.4" y1="231.8" x2="589.4" y2="253.4" stroke="#34d399" stroke-width="1.5"/>
+<rect x="582.9" y="235.1" width="13.0" height="14.1" rx="2" fill="#34d399"/>
+<line x1="618.9" y1="222.7" x2="618.9" y2="238.3" stroke="#34d399" stroke-width="1.5"/>
+<rect x="612.4" y="227.0" width="13.0" height="6.1" rx="2" fill="#34d399"/>
+<line x1="648.4" y1="213.6" x2="648.4" y2="228.8" stroke="#34d399" stroke-width="1.5"/>
+<rect x="641.9" y="218.8" width="13.0" height="6.7" rx="2" fill="#34d399"/>
+<line x1="677.9" y1="207.5" x2="677.9" y2="225.5" stroke="#34d399" stroke-width="1.5"/>
+<rect x="671.4" y="210.7" width="13.0" height="10.5" rx="2" fill="#34d399"/>
+<line x1="707.4" y1="198.3" x2="707.4" y2="216.8" stroke="#34d399" stroke-width="1.5"/>
+<rect x="700.9" y="202.6" width="13.0" height="8.9" rx="2" fill="#34d399"/>
+<line x1="737.0" y1="189.2" x2="737.0" y2="203.2" stroke="#34d399" stroke-width="1.5"/>
+<rect x="730.5" y="194.5" width="13.0" height="5.5" rx="2" fill="#34d399"/>
+<line x1="766.5" y1="183.1" x2="766.5" y2="198.6" stroke="#34d399" stroke-width="1.5"/>
+<rect x="760.0" y="186.4" width="13.0" height="8.0" rx="2" fill="#34d399"/>
+<line x1="796.0" y1="178.0" x2="796.0" y2="194.3" stroke="#34d399" stroke-width="1.5"/>
+<rect x="789.5" y="182.3" width="13.0" height="6.7" rx="2" fill="#34d399"/>
+<line x1="58" y1="386" x2="796" y2="386" class="grid"/>
+<text x="58" y="399" class="axis">RELATIVE VOLUME / LIQUIDITY</text>
+<line x1="58" y1="439.6" x2="796" y2="439.6" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 5"/>
+<text x="796" y="434.6" text-anchor="end" class="axis">THRESHOLD</text>
+<rect x="51.5" y="472.1" width="13.0" height="13.9" rx="2" fill="#f59e0b" fill-opacity=".5"/>
+<rect x="81.0" y="470.5" width="13.0" height="15.5" rx="2" fill="#f59e0b" fill-opacity=".5"/>
+<rect x="110.5" y="472.9" width="13.0" height="13.1" rx="2" fill="#f59e0b" fill-opacity=".5"/>
+<rect x="140.1" y="469.0" width="13.0" height="17.0" rx="2" fill="#f59e0b" fill-opacity=".5"/>
+<rect x="169.6" y="471.3" width="13.0" height="14.7" rx="2" fill="#f59e0b" fill-opacity=".5"/>
+<rect x="199.1" y="469.8" width="13.0" height="16.2" rx="2" fill="#f59e0b" fill-opacity=".5"/>
+<rect x="228.6" y="470.5" width="13.0" height="15.5" rx="2" fill="#f59e0b" fill-opacity=".5"/>
+<rect x="258.1" y="468.2" width="13.0" height="17.8" rx="2" fill="#f59e0b" fill-opacity=".5"/>
+<rect x="287.7" y="469.8" width="13.0" height="16.2" rx="2" fill="#f59e0b" fill-opacity=".5"/>
+<rect x="317.2" y="467.5" width="13.0" height="18.5" rx="2" fill="#f59e0b" fill-opacity=".5"/>
+<rect x="346.7" y="464.4" width="13.0" height="21.6" rx="2" fill="#f59e0b" fill-opacity=".5"/>
+<rect x="376.2" y="459.7" width="13.0" height="26.3" rx="2" fill="#f59e0b" fill-opacity=".5"/>
+<rect x="405.7" y="445.8" width="13.0" height="40.2" rx="2" fill="#f59e0b" fill-opacity=".5"/>
+<rect x="435.3" y="408.7" width="13.0" height="77.3" rx="2" fill="#f59e0b" fill-opacity=".9"/>
+<rect x="464.8" y="435.0" width="13.0" height="51.0" rx="2" fill="#f59e0b" fill-opacity=".9"/>
+<rect x="494.3" y="448.9" width="13.0" height="37.1" rx="2" fill="#f59e0b" fill-opacity=".5"/>
+<rect x="523.8" y="456.6" width="13.0" height="29.4" rx="2" fill="#f59e0b" fill-opacity=".5"/>
+<rect x="553.3" y="461.3" width="13.0" height="24.7" rx="2" fill="#f59e0b" fill-opacity=".5"/>
+<rect x="582.9" y="465.1" width="13.0" height="20.9" rx="2" fill="#f59e0b" fill-opacity=".5"/>
+<rect x="612.4" y="467.5" width="13.0" height="18.5" rx="2" fill="#f59e0b" fill-opacity=".5"/>
+<rect x="641.9" y="468.2" width="13.0" height="17.8" rx="2" fill="#f59e0b" fill-opacity=".5"/>
+<rect x="671.4" y="469.0" width="13.0" height="17.0" rx="2" fill="#f59e0b" fill-opacity=".5"/>
+<rect x="700.9" y="470.5" width="13.0" height="15.5" rx="2" fill="#f59e0b" fill-opacity=".5"/>
+<rect x="730.5" y="471.3" width="13.0" height="14.7" rx="2" fill="#f59e0b" fill-opacity=".5"/>
+<rect x="760.0" y="472.1" width="13.0" height="13.9" rx="2" fill="#f59e0b" fill-opacity=".5"/>
+<rect x="789.5" y="472.9" width="13.0" height="13.1" rx="2" fill="#f59e0b" fill-opacity=".5"/>
+<circle cx="441.8" cy="352.8" r="4.5" fill="#f8fafc" stroke="#08111f" stroke-width="2"/>
+<line x1="441.8" y1="358.8" x2="441.8" y2="346.0" stroke="#64748b" stroke-width="1.2"/>
+<text x="441.8" y="358.0" text-anchor="middle" class="annotation">Flush + long wick</text>
+<circle cx="530.3" cy="259.4" r="4.5" fill="#f8fafc" stroke="#08111f" stroke-width="2"/>
+<line x1="530.3" y1="253.4" x2="530.3" y2="240.4" stroke="#64748b" stroke-width="1.2"/>
+<text x="530.3" y="235.4" text-anchor="middle" class="annotation">Delayed confirmation</text>
+<line x1="530.3" y1="162" x2="530.3" y2="365" stroke="#34d399" stroke-width="1.5" stroke-dasharray="4 5" stroke-opacity=".75"/>
+<polygon points="523.3199999999999,302.44 537.3199999999999,302.44 530.3199999999999,291.44" fill="#34d399"/>
+<rect x="474.8" y="308.4" width="111.1" height="23" rx="11.5" fill="#34d399"/>
+<text x="530.3" y="323.9" text-anchor="middle" class="signal">Reversal LONG</text>
+<line x1="548.3" y1="174.2" x2="796" y2="174.2" stroke="#34d399" stroke-width="1.5" stroke-dasharray="5 5"/>
+<text x="791.0" y="169.2" text-anchor="end" class="risk" fill="#34d399">TARGET</text>
+<line x1="548.3" y1="348.8" x2="796" y2="348.8" stroke="#f87171" stroke-width="1.5" stroke-dasharray="5 5"/>
+<text x="791.0" y="343.8" text-anchor="end" class="risk" fill="#f87171">INVALIDATION</text>
+<text x="866" y="136" class="condition-title">WHAT THE STRATEGY SEES</text>
+<rect x="862" y="158" width="286" height="69" rx="13" fill="#111c31" stroke="#26364f"/>
+<circle cx="884" cy="180" r="13" fill="#22d3ee"/>
+<text x="884" y="184" text-anchor="middle" class="condition-number">1</text>
+<text x="905" y="179" class="condition-copy"><tspan x="905" dy="0">Liquidity and relative volume</tspan><tspan x="905" dy="18">spike</tspan></text>
+<rect x="862" y="241" width="286" height="69" rx="13" fill="#111c31" stroke="#26364f"/>
+<circle cx="884" cy="263" r="13" fill="#60a5fa"/>
+<text x="884" y="267" text-anchor="middle" class="condition-number">2</text>
+<text x="905" y="262" class="condition-copy"><tspan x="905" dy="0">The sweep prints an extreme</tspan><tspan x="905" dy="18">rejection wick</tspan></text>
+<rect x="862" y="324" width="286" height="69" rx="13" fill="#111c31" stroke="#26364f"/>
+<circle cx="884" cy="346" r="13" fill="#f59e0b"/>
+<text x="884" y="350" text-anchor="middle" class="condition-number">3</text>
+<text x="905" y="345" class="condition-copy"><tspan x="905" dy="0">Close position and body show</tspan><tspan x="905" dy="18">recovery</tspan></text>
+<rect x="862" y="407" width="286" height="69" rx="13" fill="#111c31" stroke="#26364f"/>
+<circle cx="884" cy="429" r="13" fill="#34d399"/>
+<text x="884" y="433" text-anchor="middle" class="condition-number">4</text>
+<text x="905" y="428" class="condition-copy"><tspan x="905" dy="0">Directional confirmation</tspan><tspan x="905" dy="18">arrives before timeout</tspan></text>
+<text x="32" y="545" class="footer">LONG EXAMPLE • MIRRORED RULES CAN PRODUCE THE OPPOSITE SIDE • EXACT THRESHOLDS ARE CONFIGURABLE</text>
+</svg>

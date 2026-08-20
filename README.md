@@ -13,6 +13,15 @@ and ATR structure for stops and R-multiple targets.
 
 ![MarketFlushReversal strategy logic](https://raw.githubusercontent.com/TradeJS-Dev/TradeJS-Strategy-MarketFlushReversal/main/docs/strategy-logic.svg)
 
+## Signal on an example chart
+
+A capitulation candle combines a liquidity and volume spike with a deep rejection wick; the strategy waits for directional recovery before signaling LONG.
+
+![MarketFlushReversal signal on an illustrative ticker chart](https://raw.githubusercontent.com/TradeJS-Dev/TradeJS-Strategy-MarketFlushReversal/main/docs/signal-example.svg)
+
+The illustration is schematic, not market data. Exact thresholds, confirmation
+rules, and risk parameters come from the active TradeJS strategy config.
+
 ## Install
 
 ```bash
