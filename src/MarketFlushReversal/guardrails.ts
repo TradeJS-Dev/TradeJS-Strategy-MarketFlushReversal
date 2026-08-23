@@ -293,7 +293,9 @@ export const buildMarketFlushReversalGuardrailContext = ({
       localParticipationConfirmed
       ? 3
       : 2
-    : 5;
+    : protectedV1H1Range50AiShortPocket && !validatedAiShortPocket
+      ? 4
+      : 5;
   const marketFlushReversalGateFeatures: MarketFlushReversalGateFeatures = {
     signalDirection: direction,
     broadMarketPressure,

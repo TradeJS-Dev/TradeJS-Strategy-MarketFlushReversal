@@ -97,7 +97,7 @@ describe("MarketFlushReversal guardrails", () => {
     });
 
     expect(context.approvalAllowedNow).toBe(true);
-    expect(context.deterministicQuality).toBe(5);
+    expect(context.deterministicQuality).toBe(4);
     expect(context.marketFlushReversalGateFeatures).toMatchObject({
       validatedAiShortPocket: false,
       protectedV1H1Range50Enabled: true,
