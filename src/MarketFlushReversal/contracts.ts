@@ -24,6 +24,7 @@ export interface MarketFlushReversalSignalContext {
   deltaDivergenceVsPrice: string | null;
   structureConfirmed: boolean;
   participationConfirmed: boolean;
+  protectedV1H1Range50Enabled?: boolean;
   entryMode?: MarketFlushReversalEntryMode;
   setupTimestamp?: number;
   entryDelayBars?: number;

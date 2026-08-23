@@ -5,6 +5,7 @@ import {
   getMarketFlushReversalAiShortPocketFeatures,
   getMarketFlushReversalLongReboundPocketFeatures,
   isMarketFlushReversalCalibratedLongReboundPocket,
+  isMarketFlushReversalProtectedV1H1Range50AiShortPocket,
   isMarketFlushReversalValidatedAiLongPocket,
   isMarketFlushReversalValidatedAiShortPocket,
 } from "./pockets";
@@ -34,6 +35,9 @@ export type MarketFlushReversalGateFeatures = {
   validatedAiLongPocket: boolean;
   top10AdvanceDeclineRatio: number | null;
   validatedAiShortPocket: boolean;
+  protectedV1H1Range50Enabled: boolean;
+  protectedV1H1Range50AiShortPocket: boolean;
+  approvedAiShortPocket: boolean;
 };
 
 export type MarketFlushReversalGuardrailContext =
@@ -226,6 +230,25 @@ export const buildMarketFlushReversalGuardrailContext = ({
     direction,
   });
   const { top10AdvanceDeclineRatio } = aiShortPocketFeatures;
+  const broadMarketPressure =
+    baseContext?.derivatives?.summary?.pressure ?? null;
+  const broadMarketPriceOiDivergenceType =
+    baseContext?.derivatives?.summary?.priceOiDivergenceType ?? null;
+  const protectedV1H1Range50Enabled =
+    signalContext.protectedV1H1Range50Enabled === true;
+  const protectedV1H1Range50AiShortPocket =
+    protectedV1H1Range50Enabled &&
+    isMarketFlushReversalProtectedV1H1Range50AiShortPocket({
+      direction,
+      top10AdvanceDeclineRatio,
+      sweepWickPct,
+      broadMarketPriceOiDivergenceType,
+      broadMarketFlushDirection,
+      broadMarketPressure,
+      h1RangePosition,
+    });
+  const approvedAiShortPocket =
+    validatedAiShortPocket || protectedV1H1Range50AiShortPocket;
   const approvalBlockReasons: string[] = [];
   const riskAnnotations: string[] = [];
 
@@ -252,7 +275,7 @@ export const buildMarketFlushReversalGuardrailContext = ({
   ) {
     riskAnnotations.push("broad_market_flush_direction_mismatch");
   }
-  if (direction === "SHORT" && !validatedAiShortPocket) {
+  if (direction === "SHORT" && !approvedAiShortPocket) {
     approvalBlockReasons.push("validated_short_ai_pocket_missing");
   }
   if (direction === "LONG" && !validatedAiLongPocket) {
@@ -273,13 +296,12 @@ export const buildMarketFlushReversalGuardrailContext = ({
     : 5;
   const marketFlushReversalGateFeatures: MarketFlushReversalGateFeatures = {
     signalDirection: direction,
-    broadMarketPressure: baseContext?.derivatives?.summary?.pressure ?? null,
+    broadMarketPressure,
     broadMarketRiskFlags: marketRiskFlags,
     broadMarketLiqSpikeRatio: getMarketLiqSpikeRatio(baseContext),
     broadMarketLiqImbalance,
     broadMarketFundingZScore: getMarketFundingZScore(baseContext),
-    broadMarketPriceOiDivergenceType:
-      baseContext?.derivatives?.summary?.priceOiDivergenceType ?? null,
+    broadMarketPriceOiDivergenceType,
     broadMarketFlushDirection,
     broadMarketFlushConfirmed,
     localStructureConfirmed,
@@ -297,6 +319,9 @@ export const buildMarketFlushReversalGuardrailContext = ({
     validatedAiLongPocket,
     top10AdvanceDeclineRatio,
     validatedAiShortPocket,
+    protectedV1H1Range50Enabled,
+    protectedV1H1Range50AiShortPocket,
+    approvedAiShortPocket,
   };
 
   return {

@@ -349,6 +349,9 @@ export const detectMarketFlushReversalSignal = ({
     deltaDivergenceVsPrice,
     structureConfirmed,
     participationConfirmed,
+    protectedV1H1Range50Enabled: Boolean(
+      config.MFR_ENABLE_PROTECTED_V1_H1_RANGE50_SHORT_POCKET ?? false,
+    ),
   };
 };
 

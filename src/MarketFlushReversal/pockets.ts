@@ -25,6 +25,8 @@ export const MFR_CALIBRATED_LONG_H1_RANGE_POSITION_MAX = 0.08;
 export const MFR_AI_LONG_STOP_DISTANCE_ATR_MIN = 24;
 export const MFR_AI_SHORT_TOP10_ADVANCE_DECLINE_RATIO_MIN = 4;
 export const MFR_AI_SHORT_SWEEP_WICK_PCT_MIN = 0.2;
+export const MFR_PROTECTED_V1_H1_RANGE50_SHORT_TOP10_ADVANCE_DECLINE_RATIO_MIN = 3;
+export const MFR_PROTECTED_V1_H1_RANGE50_SHORT_H1_RANGE_POSITION_MIN = 0.5;
 
 export const getMarketFlushReversalLongReboundPocketFeatures = (
   baseContext: BaseStrategyContextSnapshot | null | undefined,
@@ -112,3 +114,33 @@ export const isMarketFlushReversalValidatedAiShortPocket = ({
   top10AdvanceDeclineRatio > MFR_AI_SHORT_TOP10_ADVANCE_DECLINE_RATIO_MIN &&
   sweepWickPct != null &&
   sweepWickPct >= MFR_AI_SHORT_SWEEP_WICK_PCT_MIN;
+
+export const isMarketFlushReversalProtectedV1H1Range50AiShortPocket = ({
+  direction,
+  top10AdvanceDeclineRatio,
+  sweepWickPct,
+  broadMarketPriceOiDivergenceType,
+  broadMarketFlushDirection,
+  broadMarketPressure,
+  h1RangePosition,
+}: {
+  direction: Direction | null;
+  top10AdvanceDeclineRatio: number | null;
+  sweepWickPct: number | null;
+  broadMarketPriceOiDivergenceType: string | null;
+  broadMarketFlushDirection: Direction | null;
+  broadMarketPressure: string | null;
+  h1RangePosition: number | null;
+}) =>
+  direction === "SHORT" &&
+  top10AdvanceDeclineRatio != null &&
+  top10AdvanceDeclineRatio >
+    MFR_PROTECTED_V1_H1_RANGE50_SHORT_TOP10_ADVANCE_DECLINE_RATIO_MIN &&
+  sweepWickPct != null &&
+  sweepWickPct >= MFR_AI_SHORT_SWEEP_WICK_PCT_MIN &&
+  broadMarketPriceOiDivergenceType !== "flat_or_mixed" &&
+  broadMarketPriceOiDivergenceType !== "price_down_oi_up" &&
+  broadMarketFlushDirection !== "LONG" &&
+  broadMarketPressure !== "crowded_short" &&
+  h1RangePosition != null &&
+  h1RangePosition >= MFR_PROTECTED_V1_H1_RANGE50_SHORT_H1_RANGE_POSITION_MIN;

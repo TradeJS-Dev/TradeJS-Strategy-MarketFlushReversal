@@ -122,6 +122,9 @@ Additional Market Flush Reversal context:
 - validatedAiLongPocket=${String(context.marketFlushReversalGateFeatures.validatedAiLongPocket)}
 - top10AdvanceDeclineRatio=${String(context.marketFlushReversalGateFeatures.top10AdvanceDeclineRatio ?? "n/a")}
 - validatedAiShortPocket=${String(context.marketFlushReversalGateFeatures.validatedAiShortPocket)}
+- protectedV1H1Range50Enabled=${String(context.marketFlushReversalGateFeatures.protectedV1H1Range50Enabled)}
+- protectedV1H1Range50AiShortPocket=${String(context.marketFlushReversalGateFeatures.protectedV1H1Range50AiShortPocket)}
+- approvedAiShortPocket=${String(context.marketFlushReversalGateFeatures.approvedAiShortPocket)}
 - approvalAllowedNow=${String(context.approvalAllowedNow)}
 - deterministicQuality=${String(context.deterministicQuality)}
 - approvalBlockReasons=${context.approvalBlockReasons.join(",") || "none"}
