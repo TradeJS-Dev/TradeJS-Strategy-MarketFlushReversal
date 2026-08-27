@@ -9,6 +9,12 @@ liquidity, volume, wick rejection, and range-location evidence. It can wait
 several bars for directional confirmation before entering and uses the sweep
 and ATR structure for stops and R-multiple targets.
 
+In deterministic `AI_MODE: "gate"`, LONG and SHORT signals must match their
+validated causal context pockets. The optional
+`MFR_ENABLE_PROTECTED_V1_H1_RANGE50_SHORT_POCKET` flag adds a narrower SHORT
+approval path that requires supportive breadth, wick, derivatives, and 1h
+range-position context; missing required features still fail closed.
+
 ## Logic at a glance
 
 ![MarketFlushReversal strategy logic](https://raw.githubusercontent.com/TradeJS-Dev/TradeJS-Strategy-MarketFlushReversal/main/docs/strategy-logic.svg)
