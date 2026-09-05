@@ -47,9 +47,9 @@ const LONG_CONFIRMATION = makeCandle({
 const makeConfig = (overrides: Record<string, unknown> = {}) =>
   ({
     ...DEFAULT_CONFIG,
-    FEE_PERCENT: 0,
-    SLIPPAGE_BASE_BPS: 0,
-    SLIPPAGE_MARKET_IMPACT_BPS: 0,
+    RISK_FEE_RATE: 0,
+    RISK_SLIPPAGE_BPS: 0,
+    RISK_MARKET_IMPACT_BPS: 0,
     MAX_LOSS_VALUE: 10,
     MFR_MIN_VOLUME_REL20: 0,
     MFR_MAX_LONG_RANGE_POSITION: 0.5,
@@ -382,19 +382,17 @@ describe("MarketFlushReversal frozen pending stop", () => {
       direction: "LONG",
       config: makeConfig({
         MFR_USE_FROZEN_PENDING_STOP: true,
-        FEE_PERCENT: 0.001,
-        SLIPPAGE_BASE_BPS: 10,
-        SLIPPAGE_MARKET_IMPACT_BPS: 5,
+        RISK_FEE_RATE: 0.001,
+        RISK_SLIPPAGE_BPS: 10,
+        RISK_MARKET_IMPACT_BPS: 5,
       }),
     });
 
     const entryPrice = 106;
     const stopLossPrice = 87;
-    const executionCostRate = 0.001 + 15 / 10_000;
-    const lossPerUnit =
-      entryPrice -
-      stopLossPrice +
-      (entryPrice + stopLossPrice) * executionCostRate;
+    const entryFill = entryPrice * (1 + 15 / 10_000);
+    const stopFill = stopLossPrice * (1 - 15 / 10_000);
+    const lossPerUnit = entryFill - stopFill + (entryFill + stopFill) * 0.001;
 
     expect(result.orderPlan.stopLossPrice).toBe(stopLossPrice);
     expect(result.orderPlan.takeProfits[0].price).toBeCloseTo(136.4);
