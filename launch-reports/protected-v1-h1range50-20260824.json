@@ -1,0 +1,24 @@
+{
+  "schema": "tradejs-launch-report/v1",
+  "strategy": "MarketFlushReversal",
+  "candidate": "Protected v1 H1 range 50",
+  "sourceSha256": "a2062701d23db13b5ed4e5ea43a47dbe96a5e635206cae61e3b80982b17923d7",
+  "metrics": {
+    "trades": 157,
+    "pnl": 501.86999999999995,
+    "maxDrawdown": 76.38999999999999,
+    "maxLossStreak": 6,
+    "profitFactor": 1.6983899472592925,
+    "winRatePercent": 56.68789808917197
+  },
+  "researchRiskUsdt": 10,
+  "note": "The comparison chart includes Protected v1 H1 range 50 (157 trades). The exact duration of its longest drawdown was not retained.",
+  "period": {
+    "start": 1629680400000,
+    "end": 1787108400000
+  },
+  "chart": {
+    "caption": "Equity chart retained with the original research.",
+    "sha256": "9ab6786505c464f2e2e6e9162daa6372db23e827419036f6eaf8ccdd35d1dcb2"
+  }
+}
